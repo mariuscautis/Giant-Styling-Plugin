@@ -46,7 +46,15 @@ add_action( 'admin_enqueue_scripts', 'enqueue_admin_styles' );
         $image_url, // Use the image URL as the icon
         20
     );
-  
+    
+    add_submenu_page(
+      'giant-styling',
+      'Globals Settings',
+      'Globals',
+      'manage_options',
+      'giant-styling-globals',
+      'giant_styling_globals_page'
+  );
 
     // Add subpages
     add_submenu_page(
@@ -86,6 +94,7 @@ add_action( 'admin_enqueue_scripts', 'enqueue_admin_styles' );
       'giant_styling_flex_width_page'
   );
 
+ 
 
     // add_submenu_page(
     //     'giant-styling',
@@ -96,14 +105,6 @@ add_action( 'admin_enqueue_scripts', 'enqueue_admin_styles' );
     //     'giant_styling_font_size_page'
     // );
 
-    // add_submenu_page(
-    //     'giant-styling',
-    //     'Globals Settings',
-    //     'Globals',
-    //     'manage_options',
-    //     'giant-styling-globals',
-    //     'giant_styling_globals_page'
-    // );
 
   
   
@@ -120,6 +121,16 @@ function giant_styling_page() {
         include( plugin_dir_path( __FILE__ ) . 'parts/intro.php' );
     echo '</div>';
 }
+
+
+function giant_styling_globals_page() {
+  // Display content for Globals Settings page
+  echo '<div class="giant-container">';
+      echo '<h1>Globals Settings</h1>';
+      include( plugin_dir_path( __FILE__ ) . 'parts/globals.php' );
+  echo '</div>';
+}
+
 
 // Callback functions for subpages
 function giant_styling_margin_page() {
@@ -163,12 +174,6 @@ function giant_styling_font_size_page() {
     echo '</div>';
 }
 
-function giant_styling_globals_page() {
-    // Display content for Globals Settings page
-    echo '<div class="giant-container">';
-        echo '<h1>Globals Settings</h1>';
-    echo '</div>';
-}
 
 
 

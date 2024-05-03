@@ -1,5 +1,6 @@
 /* Table of Contents  
-  
+
+    #Global Options
     #Backend Styling
     #Margin Section
     #Padding Section
@@ -142,6 +143,28 @@ html{
   height: 20px;
   width: auto;
 }
+
+
+/* Global Options Start  */
+@media screen and (min-width: 1201px){
+  .hide-on-desktop{
+    display: none !important;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1200px)  {
+  .hide-on-tablet{
+    display: none !important;
+  }
+}
+@media screen and (max-width: 600px){
+  .hide-on-mobile{
+    display: none !important;
+  }
+}
+
+/* Global Options End  */
+
+
 
 
 /* Margin Section Start  */
@@ -338,7 +361,7 @@ html{
 }
 
 
-@media screen and (min-width: 601px) and (max-width: 120px)  {
+@media screen and (min-width: 601px) and (max-width: 1200px)  {
   .tablet-margin-left-0{
     margin-left: 0px !important; 
   }
